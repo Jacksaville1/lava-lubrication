@@ -20,7 +20,7 @@ $ M > M_{2} $
 
 In section 4 of the paper, we turn our attention to real-world topography and model the time-dependent flow at Marcath Volcano, Nevada in the eruption 35kyr ago. The lava field produced in this eruption is well preserved, and has been measured using LiDAR by Younger et al. (2019). The outline of the lava field from Younger et al. (2019) is contained in the file 'lavafield.tif', while the DEM, obtained from SRTM is contained in the file 'topography.tif'. These files are read by the program 'import_marcath_data.m', which constructs an approximation of the pre-eruptive palaeotopography at Marcath by subtracting the average lava thickness (11m) from the DEM. This is smoothed using a Gaussian filter with radius $R$
 , which is specified. 
-The transient solution is obtained using the program 'transientsolver.m'. This takes inputs of topography, eruption duration, effusion rate, 
+The transient solution is obtained using the program 'transient_solver_marcath.m'. This takes inputs of topography, eruption duration, effusion rate, 
 $q$, 
 lava viscosity, 
 $\mu$ 
