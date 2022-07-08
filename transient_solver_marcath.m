@@ -18,7 +18,7 @@ q=80;           %lava flux (m3/s)  --- input rate = q
 
 
 % generate rectangular mesh (50m resolution)
-deltax= 100; 
+deltax= 50; 
 xvec=-1700:deltax:1400; n =length(xvec);
 yvec=-1300:deltax:1300; m =length(yvec);     
 [Xmesh,Ymesh] = meshgrid(xvec,yvec);
