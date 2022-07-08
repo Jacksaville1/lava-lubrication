@@ -10,7 +10,7 @@ $ \nabla \cdot [h^3 \nabla (E+h)]  =0 $.
 
 In section 3 of the paper, this steady governing equation is solved for flow over mathematically idealised topographic features on inclined planes using 'steadysolver.m'. This program requires a topographic feature be specified, as well as the background slope, $\beta$, and lava thickness at the upstream line source, $h_\infty$. The program uses an adaptive solver from MATLAB's Partial Differential Equation Toolbox, and the upstream depth is iteratively reduced to $h_\infty$. The final iteration of the solver increases the mesh resolution to produce a high-resolution figure.
 
-In section 4 of the paper, we turn our attention to real-world topography and model the transient flow at Marcath Volcano, Nevada in the eruption 35kyr ago. The lava field produced in this eruption is well preserved, and has been measured using LiDAR by Younger et al. (2019). The outline of the lava field from Younger et al. (2019) is contained in the file 'lavafield.tif', while the DEM, obtained from SRTM is contained in the file 'topography.tif'. These files are read by the program 'import_marcath_data.m', which constructs an approximation of the pre-eruptive palaeotopography at Marcath by subtracting the average lava thickness (11m) from the DEM. This is smoothed using a Gaussian filter with radius $R$
+In section 4 of the paper, we turn our attention to real-world topography and model the time-dependent flow at Marcath Volcano, Nevada in the eruption 35kyr ago. The lava field produced in this eruption is well preserved, and has been measured using LiDAR by Younger et al. (2019). The outline of the lava field from Younger et al. (2019) is contained in the file 'lavafield.tif', while the DEM, obtained from SRTM is contained in the file 'topography.tif'. These files are read by the program 'import_marcath_data.m', which constructs an approximation of the pre-eruptive palaeotopography at Marcath by subtracting the average lava thickness (11m) from the DEM. This is smoothed using a Gaussian filter with radius $R$
 , which is specified. 
 The transient solution is obtained using the program 'transientsolver.m'. This takes inputs of topography, eruption duration, effusion rate, 
 $q$, 
@@ -21,6 +21,9 @@ $\rho$
 . The program calculates lava thickness at every mesh point for all times between the eruption start and end. These data are stored in variables 
 $hsol$ 
 and 
+$t$.
+The program plots the lava thickness at the end of the eruption, the topographic contours and the outline of the observed lava field. Snapshots of the flow at other times can be found by interpolation of 
+$hsol$ and
 $t$.
 
 
