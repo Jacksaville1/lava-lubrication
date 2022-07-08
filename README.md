@@ -1,10 +1,13 @@
 # Lava Flow Modelling
 This repository contains the code used to generate the results in the paper "Predicting Safe Zones within Lava Flows over Topography" by Saville, Hinton and Huppert.
-The paper uses lubrication theory (a shallow-flow approximation) to model isoviscous lava flows over topography. Time-dependent lava simulations are produced by solving the governing equation
+The paper uses lubrication theory (a shallow-flow approximation) to model isoviscous lava flows over topography. Time-dependent lava simulations of flow over topography with height 
+$E(x,y)$
+are produced by solving the following governing equation for lava thickness
+$h(x,y,t)$.
 
-$ \frac{\partial h}{\partial t} = \frac{\rho g}{3 \mu} \nabla \cdot [h^3 \nabla (E+h)] $,    
+$ \frac{\partial h}{\partial t} = \frac{\rho g}{3 \mu} \nabla \cdot [h^3 \nabla (E+h)] $   
 
-while steady state simulations are produced by setting $\frac{\partial h}{\partial t} =0 $. This gives the steady governing equation 
+Steady state simulations are produced by setting $\frac{\partial h}{\partial t} =0 $. This gives the steady governing equation 
 
 $ \nabla \cdot [h^3 \nabla (E+h)]  =0 $.
 
