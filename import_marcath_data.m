@@ -1,7 +1,7 @@
 %import STDS data 'topography.tif' and lava data 'lava_thickness_flat.tif'
 tiff1 = Tiff('topography.tif'); tiff2 = Tiff('lavafield.tif');
 
-%read as matrices, crop (1 arcsec resolution)
+%read as matrices (1 arcsec resolution)
 topo_post= double(read(tiff1)); lava_thickness_unsmoothed = 11*double(read(tiff2));
 
 [sizey,sizex]=size(topo_post);
